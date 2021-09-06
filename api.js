@@ -1,7 +1,9 @@
 var express = require('express'); // requre the express framework
 var app = express();
 var fs = require('fs'); //require file system object
-
+app.get('/',function(req,res){
+    res.end("Hello World");
+})
 // Endpoint to Get a list of users
 app.get('/getUsers', function(req, res){
     fs.readFile(__dirname + "/" + "details.json", 'utf8', function(err, data){
